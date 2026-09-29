@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: runix-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-runix}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-runix_secret_dev}
+      POSTGRES_DB: ${POSTGRES_DB:-runix_dev}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - runix-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: runix-redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - runix-network
+
+  # backend:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile
+  #   container_name: runix-backend
+  #   ports:
+  #     - "${API_PORT:-4000}:4000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://${POSTGRES_USER:-runix}:${POSTGRES_PASSWORD:-runix_secret_dev}@postgres:5432/${POSTGRES_DB:-runix_dev}
+  #     - REDIS_URL=redis://redis:6379
+  #   depends_on:
+  #     - postgres
+  #     - redis
+  #   networks:
+  #     - runix-network
+
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   container_name: runix-frontend
+  #   ports:
+  #     - "${APP_PORT:-3000}:3000"
+  #   depends_on:
+  #     - backend
+  #   networks:
+  #     - runix-network
+
+networks:
+  runix-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:

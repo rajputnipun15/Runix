@@ -1,0 +1,23 @@
+{
+  "name": "runix",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RUNIX — Browser-based cloud development platform / cloud IDE",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "lint:frontend": "npm --prefix frontend run lint",
+    "dev:backend": "cd backend && uvicorn app.main:app --reload --port 8000",
+    "db:inspect": ".\\backend\\.venv\\Scripts\\python.exe backend/scripts/inspect_db.py",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [
+    "cloud-ide",
+    "developer-platform",
+    "runix"
+  ],
+  "author": "RUNIX Team",
+  "license": "UNLICENSED"
+}

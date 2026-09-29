@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC001",
+    "title": "postapiv1authregisterregisternewdeveloperaccount",
+    "description": "Test user registration with valid email, password, and display_name to receive 200 and created user data."
+  },
+  {
+    "id": "TC002",
+    "title": "postapiv1authloginauthenticateusercredentials",
+    "description": "Test user login with valid credentials to receive 200 and JWT/session token."
+  },
+  {
+    "id": "TC003",
+    "title": "getapiv1authmegetauthenticatedusersummary",
+    "description": "Test retrieval of authenticated user summary with valid token to receive 200 and user data."
+  },
+  {
+    "id": "TC004",
+    "title": "postapiv1authlogoutrevokeactivesessions",
+    "description": "Test logout endpoint with valid token to receive 200 logout success."
+  },
+  {
+    "id": "TC005",
+    "title": "getapiv1projectslistuserprojects",
+    "description": "Test listing projects owned by authenticated user to receive 200 with project list."
+  },
+  {
+    "id": "TC006",
+    "title": "postapiv1projectscreateprojectwithtemplate",
+    "description": "Test creating a new project with valid name, template, and visibility to receive 201 with project details."
+  },
+  {
+    "id": "TC007",
+    "title": "getapiv1projectsprojectidretrieveprojectdetails",
+    "description": "Test retrieving project details by project_id for authenticated user to receive 200 with project details or 404 if not found."
+  },
+  {
+    "id": "TC008",
+    "title": "getapiv1templatesretrievetemplatelist",
+    "description": "Test retrieving the list of available project starter templates to receive 200 with template list."
+  },
+  {
+    "id": "TC009",
+    "title": "getapiv1projectsprojectidfileslistfilesindirectory",
+    "description": "Test listing files and directories in project workspace for authenticated user to receive 200 with file tree."
+  },
+  {
+    "id": "TC010",
+    "title": "getapiv1healthretrieveapihealthstatus",
+    "description": "Test health check endpoint to receive 200 with system health status."
+  }
+]

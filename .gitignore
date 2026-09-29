@@ -1,0 +1,75 @@
+# Dependencies
+node_modules/
+*/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Quality
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+playwright-report/
+test-results/
+.playwright-mcp/
+
+# Build & Bundles
+.next/
+out/
+dist/
+build/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+service-account.json
+
+# Local Databases & Storage
+*.db
+*.sqlite
+*.sqlite3
+runix_dev.db
+docker-data/
+postgres-data/
+redis-data/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+docker-compose.override.yml
+.Docker/
+
+# Temporary & Test Runner artifacts
+docs/stitch-reference/
+testsprite_tests/tmp/
+testsprite_tests/.testsprite/
